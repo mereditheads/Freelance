@@ -1,3 +1,259 @@
-//custom styles
+@charset "UTF-8";
+/* Custom Styles for prattpt */
 
-$brand-color-primary: blue;
+@import "app"; //import foundation
+
+@import "global"; //global settings for prattpt
+
+
+h1, h2, h3, h4{
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+h1{
+	letter-spacing: 4px;
+}
+
+h2{
+	letter-spacing: 3px;
+}
+
+h3{
+	letter-spacing: 2px;
+}
+
+p{
+	&.large{
+		font-size: 18px;
+		font-weight: 300;
+		color: $brand-color-primary;
+	}
+	&.accent{
+		margin-bottom: $amount-medium;
+		font-size: 20px;
+		font-family: $brand-font-alternate;
+		color: $brand-color-primary;
+	}
+}
+
+a{
+	font-family: $brand-font-alternate;
+	font-weight: bold;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+.bg-gray1{
+	background-color: #F6F8FB;
+}
+
+.bg-accent{
+	background-color: $brand-color-accent;
+	h2, h2, p, ul{
+		color: #fff;
+	}
+}
+
+.button{
+	position: relative;
+	padding: $amount-tiny $amount-medium;
+	border: solid 4px white;
+	border-radius: 5px;
+	font-family: $brand-font-alternate;
+	font-weight: bold;
+	font-size: 16px;
+	letter-spacing: 3px;
+	&:before{
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: -5px;
+		left: -5px;
+		right: -5px;
+		bottom: -5px;
+		border: solid 1px $brand-color-accent;
+		border-radius: 5px;
+	}
+}
+
+.grid-margin-bottom{
+	margin-bottom: $amount-small;
+}
+
+.grid-padding-large>.cell{
+	padding: $amount-small $amount-large;
+}
+
+.padding-top{
+	padding-top: $amount-large;
+}
+
+.section{
+	padding-top: $amount-large;
+	padding-bottom: $amount-large;
+	&.section-centered{
+		text-align: center;
+	}
+	&.section-collapse-bottom{
+		padding-bottom: 0;
+	}
+	.section-CTA{
+		margin-top: $amount-small;
+	}
+}
+
+.block-padding-medium {
+	padding: $amount-medium;
+}
+
+.title-bar{
+	max-width: 1200px;
+	padding: $amount-small $amount-small $amount-tiny $amount-small;
+	background: $brand-color-primary;
+}
+
+.title-bar-right{
+	max-width: 440px;
+}
+
+.title-bar,
+.top-bar {
+	a, p{
+		color: #fff;
+	}
+	p{
+		margin-bottom: 0;
+		padding-top: $amount-small;
+		padding-bottom: $amount-small;
+		font-family: $brand-font-alternate;
+		font-size: 16px;
+		line-height: 1;
+	}
+	p, 
+	.menu a{
+		padding: $amount-small;
+	}
+	.logo {
+	    display: inline-block;
+	    height: 56px;
+	    img{
+	    	width: auto;
+	    	height: auto;
+			max-height: $amount-medium;
+		}
+	}
+}
+
+.hero{
+	height: 500px;
+	text-align: center;
+	background: $brand-color-primary;
+	h1, h2, a{
+		color: #fff;
+	}
+}
+
+.page-title{
+	padding-top: $amount-large * 1.333;
+	padding-bottom: $amount-large * 1.333;
+	background: $brand-color-accent2;
+	text-align: center;
+	h1{
+		color: #fff;
+	}
+}
+
+.grid-float{
+	+ .grid-float{
+		margin-top: $amount-small;
+	}
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+	.image{
+		float: left;
+		width: 30%;
+	}
+	.cell{
+		float: left;
+		width: 70%;
+	}
+}
+
+.map{
+	height: 350px;
+	background: #222;
+}
+
+.block-accent{
+	position: relative;
+	padding: $amount-medium;
+	text-align: center;
+	border-radius: 5px;
+	border: solid 1px $brand-color-accent;
+	&:before{
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: -10px;
+		left: 10px;
+		right: 10px;
+		bottom: -10px;
+		border: solid 1px $brand-color-accent;
+		border-radius: 5px;
+	}
+	.large{
+		margin-bottom: $amount-small;
+	}
+	.button{
+		margin-bottom: 0;
+	}
+}
+
+.block-labeled{
+	position: relative;
+	.title{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: $amount-tiny;
+		background: $brand-color-accent;
+		color: #fff;
+		text-align: center;
+	}
+}
+
+.footer{
+	margin-top: $amount-medium;
+	padding: $amount-medium $amount-small $amount-small $amount-small;
+	background: $brand-color-secondary;
+	.logo{
+		img{
+			width: auto;
+			max-width: 140px;
+			height: auto;
+		}
+	}
+	h2, h3, h4, p, a, li{
+		color: #fff;
+	}
+	ul{
+		list-style: none;
+		margin: 0
+	}
+	li{
+		margin-bottom: 10px;
+	}
+}
+
+.sub-footer{
+	padding: $amount-tiny;
+	background: $brand-color-primary;
+	text-align: center;
+	p{
+		color: #fff;
+	}
+}

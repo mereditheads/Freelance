@@ -1,0 +1,41 @@
+// global variables & styles for prattpt
+
+@font-face{
+	font-family: 'Archivo_Narrow';
+	src: url('../fonts/Archivo_Narrow/ArchivoNarrow-Regular.ttf');
+	font-weight: normal;
+}
+
+@font-face{
+	font-family: 'Archivo_Narrow';
+	src: url('../fonts/Archivo_Narrow/ArchivoNarrow-Bold.ttf');
+	font-weight: bold;
+}
+
+@font-face{
+	font-family: 'Roboto';
+	src: url('../fonts/Roboto/Roboto-Regular.ttf');
+	font-weight: normal;
+}
+
+@font-face{
+	font-family: 'Roboto';
+	src: url('../fonts/Roboto/Roboto-Light.ttf');
+	font-weight: 300;
+}
+
+//Type---------------------------------------
+$brand-font: 'Roboto', sans-serif;
+$brand-font-alternate: 'Archivo_Narrow', sans-serif;
+
+
+//Colors---------------------------------------
+$brand-color-primary: #1C4CA0;
+$brand-color-secondary: #011945;
+$brand-color-accent: #60B90C;
+$brand-color-accent2: #4970B3;
+
+$amount-large: 60px;
+$amount-medium: 40px;
+$amount-small: 20px;
+$amount-tiny: 15px;
