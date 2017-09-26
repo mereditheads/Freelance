@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pratt Physical Therapy</title>
+    <title>Pratt Physical Therapy | Contact Us</title>
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/custom.css">
   </head>
@@ -30,82 +30,86 @@
       </div>
     </div>
 
-    <div class="hero">
+    <div class="page-title">
       <div class="large-12">
-        <h1>a hands on approach</h1>
-        <a href="#">Learn More about Manual Therapy</a>
-      </div>
-    </div>
-
-    <div class="section bg-gray1 text-center">
-      <div class="grid-container">
-        <p class="accent">At Pratt Physical Therapy, we offer a wide range of services not found at other clinics.</p>
-        <div class="grid-x grid-padding-x">
-          <div class="large-4 cell">
-            <div class="block-labeled">
-              <a href="services.html#physicaltherapy">
-                <h3 class="title">Physical Therapy</h3>
-                <img src="images/img-physicaltherapy.jpg"/>
-              </a>
-            </div>
-          </div>
-          <div class="large-4 cell">
-            <div class="block-labeled">
-              <a href="services.html#walkinclinic">
-                <h3 class="title">Walk-In Clinic</h3>
-                <img src="images/img-walkin.jpg"/>
-              </a>
-            </div>
-          </div>
-          <div class="large-4 cell">
-            <div class="block-labeled">
-              <a href="services.html#wellnessprogram">
-                <h3 class="title">Wellness Program</h3>
-                <img src="images/img-wellness.jpg"/>
-              </a>
-            </div>
-          </div>
-          <div class="cell section-CTA">
-            <a href="services.html" class="button">View Our Services</a>
-          </div>
-        </div>
+        <h1>Contact Us</h1>
       </div>
     </div>
 
     <div class="section">
       <div class="grid-container">
-        <div class="grid-x grid-padding-large align-middle">
-          <div class="small-12 medium-6 cell cell-padding-zero">
-            <img src="images/img-test.png"/>
-          </div>
+        <div class="grid-x grid-padding-x">
           <div class="small-12 medium-6 cell">
-            <h2>About Us</h2>
-            <p class="large">Pratt Physical Therapy is a progressive outpatient clinic utilizing state of the art equipment with a focus on manual therapies and bio-mechanical analysis. Pratt Physical Therapy is dedicated to patient care using innovative treatment modalities.</p>
-            <a href="about.html">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section section-collapse text-center">
-      <div class="grid-container">
-        <div class="grid-x">
-          <div class="cell">
-            <h2 class="hide-for-small-only">Visit Us</h2>
             <div class="map">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3346.709420467911!2d-80.11289548481265!3d32.98506738090966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fe8a6e153ae36f%3A0xc2b97e00dc06134c!2s3481+Ladson+Rd%2C+Ladson%2C+SC+29456!5e0!3m2!1sen!2sus!4v1506097458630" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
           </div>
+          <div class="small-12 medium-6 cell">
+            <h3>Visit Us</h3>
+            <p class="large">3481 Ladson Rd <br/>Ladson, SC 29456</p>
+            <div class="contact-details">
+              <h4>Hours</h4>
+              <ul class="timetable">
+                <li>
+                  <p class="accent">Mon</p><p class="large">9:00am - 7:00pm</p>
+                </li>
+                <li>
+                  <p class="accent">Tues</p><p class="large">8:00am - 2:00pm</p>
+                </li>
+                <li>
+                  <p class="accent">Wed</p><p class="large">9:00am - 7:00pm</p>
+                </li>
+                <li>
+                  <p class="accent">Thurs</p><p class="large">8:00am - 7:00pm</p>
+                </li>
+                <li>
+                  <p class="accent">Fri</p><p class="large">8:00am - 2:00pm</p>
+                </li>
+              </ul>
+              <p>Closed 1:00-2:00pm daily except Friday</p> 
+              <ul class="contact">
+                <li>
+                  <h4>Call</h4>
+                  <p class="accent">843.900.0745</p>
+                </li>
+                <li>
+                  <h4>Fax</h4>
+                  <p class="accent">866.396.4079</p>
+                </li>
+                <li>
+                  <h4>Email</h4>
+                  <p class="accent"><a href="mailto:therapy@prattpt.com">therapy@prattpt.com</a></p>
+                </li>
+              </ul>              
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="section">
+    <a name="schedule"></a>
+    <div class="section bg-gray1">
       <div class="grid-container">
         <div class="grid-x grid-padding-x">
-          <div class="cell block-accent">
-            <p class="large">We’d love to help you - simply fill out an appointment form and we’ll follow up to confirm your appointment.</p>
-            <a href="contact.html#schedule" class="button">Schedule An Appointment</a>
+          <div class="small-12 medium-6 cell">
+            <h3>Schedule an Appointment</h3>
+            <form data-abide>
+              <div data-abide-error class="alert callout" style="display: none;">
+                <p><i class="fi-alert"></i> There are some errors in your form.</p>
+              </div>
+              <input type="text" placeholder="Name" required>
+              <!--<span class="form-error">
+                Required field!
+              </span>-->
+              <input type="email" placeholder="Email Address">
+              <input type="tel" placeholder="Phone Number" required>
+              <input type="text" placeholder="Reason For Visit" required>
+              <textarea type="text" placeholder="Comments/Questions" rows="3"></textarea>
+            </form>
+            <button class="button" type="submit" value="Submit">Send</a>
+          </div>
+          <div class="small-12 medium-6 cell">
+            <img src="images/img-test.png"/>
           </div>
         </div>
       </div>
@@ -168,6 +172,42 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/what-input/dist/what-input.js"></script>
     <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
+    <script src="bower_components/foundation-sites/dist/js/plugins/foundation.abide.js"></script>
     <script src="js/app.js"></script>
+
+    <script type="text/javascript">
+      $(document)
+        // field element is invalid
+        .on("invalid.zf.abide", function(ev,elem) {
+          console.log("Field id "+ev.target.id+" is invalid");
+        })
+        // field element is valid
+        .on("valid.zf.abide", function(ev,elem) {
+          console.log("Field name "+elem.attr('name')+" is valid");
+        })
+        // form validation failed
+        .on("forminvalid.zf.abide", function(ev,frm) {
+          console.log("Form id "+ev.target.id+" is invalid");
+        })
+        // form validation passed, form will submit if submit event not returned false
+        .on("formvalid.zf.abide", function(ev,frm) {
+          console.log("Form id "+frm.attr('id')+" is valid");
+          // ajax post form 
+        })
+        // to prevent form from submitting upon successful validation
+        .on("submit", function(ev) {
+          ev.preventDefault();
+          console.log("Submit for form id "+ev.target.id+" intercepted");
+        });
+      // You can bind field or form event selectively
+      $("#foo").on("invalid.zf.abide", function(ev,el) {
+        alert("Input field foo is invalid");
+      });
+      $("#bar").on("formvalid.zf.abide", function(ev,frm) {
+        alert("Form is valid, finally!");
+        // do something perhaps
+      });
+    </script>
+
   </body>
 </html>

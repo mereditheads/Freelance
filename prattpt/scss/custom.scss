@@ -25,13 +25,18 @@ h3{
 
 p{
 	&.large{
-		font-size: 18px;
+		font-size: 14px;
+		@include breakpoint(large) {
+			font-size: 18px;
+		}
 		font-weight: 300;
 		color: $brand-color-primary;
 	}
 	&.accent{
-		margin-bottom: $amount-medium;
-		font-size: 20px;
+		font-size: 16px;
+		@include breakpoint(large) {
+			font-size: 20px;
+		}
 		font-family: $brand-font-alternate;
 		color: $brand-color-primary;
 	}
@@ -40,8 +45,11 @@ p{
 a{
 	font-family: $brand-font-alternate;
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 14px;
 	text-transform: uppercase;
+	@include breakpoint(large){
+		font-size: 16px;
+	}
 }
 
 .bg-gray1{
@@ -57,13 +65,13 @@ a{
 
 .button{
 	position: relative;
-	padding: $amount-tiny $amount-medium;
+	padding: $amount-tiny*3/4 $amount-small;
 	border: solid 4px white;
 	border-radius: 5px;
 	font-family: $brand-font-alternate;
 	font-weight: bold;
-	font-size: 16px;
-	letter-spacing: 3px;
+	font-size: 14px;
+	letter-spacing: 2px;
 	&:before{
 		content: " ";
 		position: absolute;
@@ -75,28 +83,82 @@ a{
 		border: solid 1px $brand-color-accent;
 		border-radius: 5px;
 	}
-}
-
-.grid-margin-bottom{
-	margin-bottom: $amount-small;
+	@include breakpoint(large){
+		padding: $amount-tiny $amount-medium;
+		font-size: 16px;
+		letter-spacing: 3px;
+	}
 }
 
 .grid-padding-large>.cell{
-	padding: $amount-small $amount-large;
+	padding: $amount-small;
+	@include breakpoint(large){
+		padding-left: $amount-large;
+		padding-right: $amount-large;
+	}
+	&.cell-padding-zero{
+		padding: 0;
+	}
 }
 
-.padding-top{
-	padding-top: $amount-large;
+.grid-float{
+	+ .grid-float{
+		margin-top: $amount-small;
+		@include breakpoint(large){
+			-ms-flex-align: center;
+	    	align-items: center;
+		}
+	}
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+	.image{
+		float: left;
+		width: 30%;
+	}
+	.cell{
+		float: left;
+		width: 70%;
+		padding-left: $amount-small;
+		padding-right: $amount-small;
+		@include breakpoint(large){
+			padding-left: $amount-large;
+			padding-right: $amount-large;
+		}
+	}
+}
+
+@include breakpoint(medium){
+	.grid-image{
+		overflow: hidden;
+		img{
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
 }
 
 .section{
-	padding-top: $amount-large;
-	padding-bottom: $amount-large;
-	&.section-centered{
-		text-align: center;
+	padding: $amount-small $amount-tiny/2;
+	@include breakpoint(medium){
+		padding: $amount-medium $amount-small;
+	}
+	@include breakpoint(large){
+		padding: $amount-large $amount-medium;
+	}
+	&.section-collapse{
+		padding-top: 0;
+		padding-bottom: 0;
 	}
 	&.section-collapse-bottom{
 		padding-bottom: 0;
+	}
+	&.section-padding-small{
+		padding-top: $amount-small/2;
+		padding-bottom: $amount-small/2;
 	}
 	.section-CTA{
 		margin-top: $amount-small;
@@ -104,7 +166,10 @@ a{
 }
 
 .block-padding-medium {
-	padding: $amount-medium;
+	padding: $amount-tiny;
+	@include breakpoint(large){
+		padding: $amount-medium;	
+	}
 }
 
 .title-bar{
@@ -132,16 +197,19 @@ a{
 	}
 	p, 
 	.menu a{
-		padding: $amount-small;
+		padding: $amount-small/2 $amount-small;
 	}
 	.logo {
 	    display: inline-block;
-	    height: 56px;
+	    height: 44px;
 	    img{
 	    	width: auto;
 	    	height: auto;
 			max-height: $amount-medium;
 		}
+	}
+	.active{
+		border-bottom: solid 3px $brand-color-accent;
 	}
 }
 
@@ -155,41 +223,72 @@ a{
 }
 
 .page-title{
-	padding-top: $amount-large * 1.333;
-	padding-bottom: $amount-large * 1.333;
+	padding-top: $amount-small * 1.333;
+	padding-bottom: $amount-small * 1.333;
 	background: $brand-color-accent2;
 	text-align: center;
+	@include breakpoint(medium){
+		padding-top: $amount-medium * 1.333;
+		padding-bottom: $amount-medium * 1.333;
+	}
+	@include breakpoint(large){
+		padding-top: $amount-large * 1.333;
+		padding-bottom: $amount-large * 1.333;
+	}
 	h1{
 		color: #fff;
 	}
 }
 
-.grid-float{
-	+ .grid-float{
-		margin-top: $amount-small;
+.map{
+	height: auto;
+}
+
+.contact-details{
+	padding-top: $amount-small;
+	padding-bottom: $amount-small;
+	ul{
+		margin: 0 0 $amount-tiny 0;
 	}
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
-	.image{
-		float: left;
-		width: 30%;
-	}
-	.cell{
-		float: left;
-		width: 70%;
+	li{
+		list-style: none;
 	}
 }
 
-.map{
-	height: 350px;
-	background: #222;
+.timetable{
+	p{
+		display: inline-block;
+		margin-bottom: 0;
+	}
+	.accent{
+		width: 50px;
+		margin-right: $amount-tiny;
+		text-align: right;
+	}
+}
+
+.contact{
+	margin-top: $amount-small !important;
+	h4, p{
+		display: inline-block;
+	}
+	h4{
+		margin-right: 5px;
+	}
+	li{
+		display: inline-block;
+		&:nth-child(1){
+			margin-right: $amount-medium;
+		}
+		&:nth-child(3){
+			display: block;
+		}
+	}
 }
 
 .block-accent{
 	position: relative;
-	padding: $amount-medium;
+	padding: $amount-small;
 	text-align: center;
 	border-radius: 5px;
 	border: solid 1px $brand-color-accent;
@@ -197,12 +296,21 @@ a{
 		content: " ";
 		position: absolute;
 		z-index: -1;
-		top: -10px;
-		left: 10px;
-		right: 10px;
-		bottom: -10px;
+		top: -5px;
+		left: 5px;
+		right: 5px;
+		bottom: -5px;
 		border: solid 1px $brand-color-accent;
 		border-radius: 5px;
+	}
+	@include breakpoint(large){
+		padding: $amount-medium;
+		&:before{
+			top: -10px;
+			left: 10px;
+			right: 10px;
+			bottom: -10px;
+		}
 	}
 	.large{
 		margin-bottom: $amount-small;
@@ -215,10 +323,11 @@ a{
 .block-labeled{
 	position: relative;
 	.title{
-		position: absolute;
+		/*position: absolute;
 		top: 0;
-		left: 0;
+		left: 0;*/
 		width: 100%;
+		margin: 0;
 		padding: $amount-tiny;
 		background: $brand-color-accent;
 		color: #fff;
@@ -227,18 +336,30 @@ a{
 }
 
 .footer{
-	margin-top: $amount-medium;
-	padding: $amount-medium $amount-small $amount-small $amount-small;
+	padding: $amount-medium $amount-small;
 	background: $brand-color-secondary;
+	.cell{
+		padding-left: $amount-small;
+		padding-right: $amount-small;
+	}
 	.logo{
+		text-align: center;
 		img{
 			width: auto;
 			max-width: 140px;
 			height: auto;
+			margin-bottom: $amount-small;
 		}
+	}
+	.copyright{
+		font-size: 11px;
 	}
 	h2, h3, h4, p, a, li{
 		color: #fff;
+		text-transform: uppercase;
+	}
+	h2, h3, h4{
+		margin-bottom: $amount-small*3/4;
 	}
 	ul{
 		list-style: none;
@@ -246,6 +367,13 @@ a{
 	}
 	li{
 		margin-bottom: 10px;
+	}
+	a{
+		font-size: 14px;
+		letter-spacing: 0.5px;
+	}
+	.contact-address p:first-child{
+		margin-bottom: 0;
 	}
 }
 
@@ -255,5 +383,8 @@ a{
 	text-align: center;
 	p{
 		color: #fff;
+	}
+	span:last-child{
+		margin-left: $amount-tiny;
 	}
 }

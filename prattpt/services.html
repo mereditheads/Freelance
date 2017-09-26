@@ -4,20 +4,24 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pratt Physical Therapy</title>
+    <title>Pratt Physical Therapy | Services</title>
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/custom.css">
   </head>
   <body>
 
     <div data-sticky-container>
-      <div class="title-bar" data-sticky data-options="marginTop:0;">
-        <div class="title-bar-left">
+      <div class="top-bar" data-sticky data-options="marginTop:0;">
+        <div class="top-bar-left">
           <a href="index.html" class="logo"><img src="images/logo-PrattPT@2x.png" /></a>
         </div>
-        <div class="title-bar-right">
-          <ul class="menu">
-            <li class="active"><a href="#">Services</a></li>
+        <div class="title-bar" data-responsive-toggle="navigation" data-hide-for="medium">
+          <button class="menu-icon" type="button" data-toggle="navigation"></button>
+          <div class="title-bar-title">Menu</div>
+        </div>
+        <div class="top-bar-right" id="navigation">
+          <ul class="menu vertical medium-horizontal" data-responsive-menu>
+            <li><a href="services.html">Services</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><p>843.900.0745</p></li>
@@ -32,7 +36,7 @@
       </div>
     </div>
 
-    <div class="section section-centered section-collapse-bottom">
+    <div class="section section-collapse-bottom text-center">
       <div class="grid-container">
         <div class="grid-x">
           <div class="cell">
@@ -42,33 +46,39 @@
       </div>
     </div>
 
-    <div class="grid-container grid-margin-bottom">
-      <div class="grid-x grid-padding-large">
-        <div class="small-12 medium-6">
-          <img src="images/img-test.png"/>
-        </div>
-        <div class="small-12 medium-6 cell bg-gray1">
-          <h2>Manual Therapy</h2>
-          <p class="large">A hands-on approach to treatment utilizing tools and techniques to deliver soft tissue mobilization and pain reduction.</p>
-          <a href="#">Learn More</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid-container">
-      <div class="grid-x grid-padding-large">
-        <div class="small-12 medium-6 cell bg-gray1">
-          <h2>Physical Therapy</h2>
-          <p class="large">​​Pratt Physical Therapy is dedicated to preventative medicine and the health of individuals. Our Innovative facility combines the restoration of bodily function by utilizing rehabilitation methods and wellness programs for an overall healthier approach to living.</p>
-          <a href="#">See Conditions We Treat</a>
-        </div>
-        <div class="small-12 medium-6">
-          <img src="images/img-test.png"/>
+    <a name="manualtherapy"></a>
+    <div class="section section-padding-small"> 
+      <div class="grid-container">
+        <div class="grid-x grid-padding-large align-middle bg-gray1" data-equalizer data-equalize-on="medium">
+          <div class="small-12 medium-6 grid-image" data-equalizer-watch>
+            <img src="images/img-manualtherapy.jpg"/>
+          </div>
+          <div class="small-12 medium-6 cell" data-equalizer-watch>
+            <h2>Manual Therapy</h2>
+            <p class="large">A hands-on approach to treatment utilizing tools and techniques to deliver soft tissue mobilization and pain reduction.</p>
+            <a href="#">Learn More</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="section section-centered section-collapse-bottom">
+    <a name="physicaltherapy"></a>
+    <div class="section section-padding-small section-collapse-bottom">
+      <div class="grid-container">
+        <div class="grid-x grid-padding-large align-middle bg-gray1" data-equalizer data-equalize-on="medium">
+          <div class="small-12 medium-6 cell" data-equalizer-watch>
+            <h2>Physical Therapy</h2>
+            <p class="large">​​Pratt Physical Therapy is dedicated to preventative medicine and the health of individuals. Our Innovative facility combines the restoration of bodily function by utilizing rehabilitation methods and wellness programs for an overall healthier approach to living.</p>
+            <a href="#">See Conditions We Treat</a>
+          </div>
+          <div class="small-12 medium-6 grid-image" data-equalizer-watch>
+            <img src="images/img-physicaltherapy.jpg"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section section-collapse-bottom text-center">
       <div class="grid-container">
         <div class="grid-x">
           <div class="cell">
@@ -78,12 +88,13 @@
       </div>
     </div>
 
-    <div class="section">
+    <div class="section section-collapse-bottom">
       <div class="grid-container">
-        <div class="grid-x grid-padding-x">
+        <div class="grid-x grid-padding-x" data-equalizer data-equalize-on="medium">
+          <a name="wellnessprogram"></a>
           <div class="small-12 medium-6 cell">
-            <img src="images/img-test.png"/>
-            <div class="block-padding-medium bg-accent">
+            <img src="images/img-wellness.jpg"/>
+            <div class="block-padding-medium bg-accent" data-equalizer-watch>
               <h2>Wellness Program</h2>
               <p class="large">Our health and wellness program is designed to keep members active. Previous patients and their family members are given a tailored exercise program according to each individual's needs.<p>
               <ul>
@@ -93,9 +104,10 @@
               </ul>
             </div>
           </div>
+          <a name="walkinclinic"></a>
           <div class="small-12 medium-6 cell">
-            <img src="images/img-test.png"/>
-            <div class="block-padding-medium bg-accent">
+            <img src="images/img-walkin.jpg"/>
+            <div class="block-padding-medium bg-accent" data-equalizer-watch>
               <h2>Walk-In Clinic</h2>
               <p class="large">Previous patients are welcome to return for a “tune-up” to prevent re-injury, and newcomers are welcome to explore benefits of manual therapies and modalities to help with minor aches and pains. This self-pay system is designed for quick treatments to allow for immediate relief and return to lifestyle.<p>
               <p>Disclaimer: If therapist feels condition warrants physician referral, treatment may be deferred.</p>
@@ -108,41 +120,52 @@
     <div class="section">
       <div class="grid-container">
         <div class="grid-x grid-padding-x">
-          <div class="large-12 block-accent">
+          <div class="cell block-accent">
             <p class="large">We’d love to help you - simply fill out an appointment form and we’ll follow up to confirm your appointment.</p>
-            <a href="#" class="button">Schedule An Appointment</a>
+            <a href="contact.html#schedule" class="button">Schedule An Appointment</a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="footer">
+        <div class="footer">
       <div class="grid-container">
         <div class="grid-x grid-padding-x">
-          <div class="large-3 logo">
+          <div class="large-3 cell logo">
             <img src="images/logo-PrattPT-circle@2x.png" />
+            <p class="copyright">2017 Pratt Physical Therapy</p>
           </div>
-          <div class="large-3">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="#">Manual Therapy</a></li>
-              <li><a href="#">Physical Therapy</a></li>
-              <li><a href="#">Wellness Program</a></li>
-              <li><a href="#">Walk-In Clinic</a></li>
+          <div class="large-3 cell">
+            <ul class="vertical menu" data-accordion-menu data-responsive-menu="accordion medium-dropdown" data-submenu-toggle="true">
+              <li>
+                <a href="#"><h4>Services</h4></a>
+                <ul class="menu vertical">
+                  <li><a href="services.html#manualtherapy">Manual Therapy</a></li>
+                  <li><a href="services.html#physicaltherapy">Physical Therapy</a></li>
+                  <li><a href="services.html#wellnessprogram">Wellness Program</a></li>
+                  <li><a href="services.html#walkinclinic">Walk-In Clinic</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
-          <div class="large-3">
-            <h4>About Us</h4>
-            <ul>
-              <li><a href="#">Dr. M. Ashton Pratt</a></li>
-              <li><a href="#">Maureen Bernard, PTA</a></li>
-              <li><a href="#">Rachel Cunningham, ATC</a></li>
+          <div class="large-3 cell">
+            <ul class="vertical menu" data-accordion-menu data-responsive-menu="accordion medium-dropdown" data-submenu-toggle="true">
+              <li>
+                <a href="#"><h4>About Us</h4></a>
+                <ul class="menu vertical">
+                  <li><a href="about.html#pratt">Dr. M. Ashton Pratt</a></li>
+                  <li><a href="about.html#bernard">Maureen Bernard, PTA</a></li>
+                  <li><a href="about.html#cunningham">Rachel Cunningham, ATC</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
-          <div class="large-3">
+          <div class="large-3 cell">
             <h4>Contact</h4>
-            <p>3481 Ladson Road</p>
-            <p>Ladson, SC 29456</p>
+            <div class="contact-address">
+              <p>3481 Ladson Road</p>
+              <p>Ladson, SC 29456</p>
+            </div>
             <ul>
               <li>Call: <a href="#">843.900.0745</a></li>
               <li>Fax: <a href="#">866.396.4079</a></li>
@@ -162,6 +185,7 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/what-input/dist/what-input.js"></script>
     <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
+    <script src="bower_components/foundation-sites/dist/js/plugins/foundation.equalizer.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

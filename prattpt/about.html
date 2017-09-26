@@ -4,21 +4,25 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pratt Physical Therapy</title>
+    <title>Pratt Physical Therapy | About Us</title>
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/custom.css">
   </head>
   <body>
 
     <div data-sticky-container>
-      <div class="title-bar" data-sticky data-options="marginTop:0;">
-        <div class="title-bar-left">
+      <div class="top-bar" data-sticky data-options="marginTop:0;">
+        <div class="top-bar-left">
           <a href="index.html" class="logo"><img src="images/logo-PrattPT@2x.png" /></a>
         </div>
-        <div class="title-bar-right">
-          <ul class="menu">
+        <div class="title-bar" data-responsive-toggle="navigation" data-hide-for="medium">
+          <button class="menu-icon" type="button" data-toggle="navigation"></button>
+          <div class="title-bar-title">Menu</div>
+        </div>
+        <div class="top-bar-right" id="navigation">
+          <ul class="menu vertical medium-horizontal" data-responsive-menu>
             <li><a href="services.html">Services</a></li>
-            <li class="active"><a href="#">About Us</a></li>
+            <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><p>843.900.0745</p></li>
           </ul>
@@ -28,13 +32,13 @@
 
     <div class="page-title">
       <div class="large-12">
-        <h1>About US</h1>
+        <h1>About Us</h1>
       </div>
     </div>
 
-    <div class="section section-centered section-collapse-bottom">
+    <div class="section">
       <div class="grid-container">
-        <div class="grid-x">
+        <div class="grid-x align-center-middle text-center">
           <div class="small-12 medium-10 large-8 cell">
             <p class="accent">Our innovative facility focuses on the restoration of mobility and function combined with maintenance protocols for an overall healthier approach to life.</p>
           </div>
@@ -42,8 +46,9 @@
       </div>
     </div>
 
-    <div class="grid-container">
-      <div class="grid-float grid-padding-large">
+    <div class="grid-container bios">
+      <div class="grid-float">
+        <a name="pratt"></a>
         <div class="image">
           <img src="images/img-test.png"/>
         </div>
@@ -52,7 +57,8 @@
           <p class="large">Dr. M. Ashton Pratt has a Doctorate of Physical Therapy from the Medical University of South Carolina with additional training in specialty areas including Vestibular, Post Mastectomy Lymphedema, Fibrotic and Scar tissue manipulation. She has a significant interest and clinical training in Sports Injury Rehabilitation with emphasis in manual based rehabilitation including state of the art Vibrastim. Dr. Pratt understands and is acutely aware of lower body biomechanics & the rehabilitation process secondary to being a collegiate athlete at University of South Carolina. </p>
         </div>
       </div>
-      <div class="grid-float grid-padding-large">
+      <div class="grid-float">
+        <a name="bernard"></a>
         <div class="image">
           <img src="images/img-test.png"/>
         </div>
@@ -61,7 +67,8 @@
           <p class="large">Maureen has an extensive background in physical therapy with 14 years of experience including the Naval Base Clinic. Maureen is diligent, demands excellence, and ensures that each and every patient receives the best quality of care during their rehab. In her free time, Maureen enjoys kayaking and exploring Pinterest for new home projects!</p>
         </div>
       </div>
-      <div class="grid-float grid-padding-large">
+      <div class="grid-float">
+        <a name="cunningham"></a>
         <div class="image">
           <img src="images/img-test.png"/>
         </div>
@@ -70,7 +77,7 @@
           <p class="large">Rachel attended the Athletic Training Program at University of South Carolina graduating in 2014. She is currently pursuing further education in rehabilitation to obtain her PTA degree. Rachel enjoys basketball and collegiate sports, especially updating Dr. Pratt on ESPN highlights. </p>
         </div>
       </div>
-      <div class="grid-float grid-padding-large">
+      <div class="grid-float">
         <div class="image">
           <img src="images/img-test.png"/>
         </div>
@@ -79,7 +86,7 @@
           <p class="large">Victoria is a native of Surfside Beach and obtained her Bachelor’s Degree from the University of South Carolina in 2014 with emphasis in Biological Sciences. Victoria has exceptional organizational and multi-tasking skills as you will see her assistance in all areas of the clinic</p>
         </div>
       </div>
-      <div class="grid-float grid-padding-large">
+      <div class="grid-float">
         <div class="image">
           <img src="images/img-test.png"/>
         </div>
@@ -88,7 +95,7 @@
           <p class="large">Alli is a recent graduate of Newberry College and is currently in the process of applying to physical therapy school. </p>
         </div>
       </div>
-      <div class="grid-float grid-padding-large">
+      <div class="grid-float">
         <div class="image">
           <img src="images/img-test.png"/>
         </div>
@@ -102,9 +109,9 @@
     <div class="section">
       <div class="grid-container">
         <div class="grid-x grid-padding-x">
-          <div class="large-12 block-accent">
+          <div class="cell block-accent">
             <p class="large">We’d love to help you - simply fill out an appointment form and we’ll follow up to confirm your appointment.</p>
-            <a href="#" class="button">Schedule An Appointment</a>
+            <a href="contact.html#schedule" class="button">Schedule An Appointment</a>
           </div>
         </div>
       </div>
@@ -113,30 +120,41 @@
     <div class="footer">
       <div class="grid-container">
         <div class="grid-x grid-padding-x">
-          <div class="large-3 logo">
+          <div class="large-3 cell logo">
             <img src="images/logo-PrattPT-circle@2x.png" />
+            <p class="copyright">2017 Pratt Physical Therapy</p>
           </div>
-          <div class="large-3">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="#">Manual Therapy</a></li>
-              <li><a href="#">Physical Therapy</a></li>
-              <li><a href="#">Wellness Program</a></li>
-              <li><a href="#">Walk-In Clinic</a></li>
+          <div class="large-3 cell">
+            <ul class="vertical menu" data-accordion-menu data-responsive-menu="accordion medium-dropdown" data-submenu-toggle="true">
+              <li>
+                <a href="#"><h4>Services</h4></a>
+                <ul class="menu vertical">
+                  <li><a href="services.html#manualtherapy">Manual Therapy</a></li>
+                  <li><a href="services.html#physicaltherapy">Physical Therapy</a></li>
+                  <li><a href="services.html#wellnessprogram">Wellness Program</a></li>
+                  <li><a href="services.html#walkinclinic">Walk-In Clinic</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
-          <div class="large-3">
-            <h4>About Us</h4>
-            <ul>
-              <li><a href="#">Dr. M. Ashton Pratt</a></li>
-              <li><a href="#">Maureen Bernard, PTA</a></li>
-              <li><a href="#">Rachel Cunningham, ATC</a></li>
+          <div class="large-3 cell">
+            <ul class="vertical menu" data-accordion-menu data-responsive-menu="accordion medium-dropdown" data-submenu-toggle="true">
+              <li>
+                <a href="#"><h4>About Us</h4></a>
+                <ul class="menu vertical">
+                  <li><a href="about.html#pratt">Dr. M. Ashton Pratt</a></li>
+                  <li><a href="about.html#bernard">Maureen Bernard, PTA</a></li>
+                  <li><a href="about.html#cunningham">Rachel Cunningham, ATC</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
-          <div class="large-3">
+          <div class="large-3 cell">
             <h4>Contact</h4>
-            <p>3481 Ladson Road</p>
-            <p>Ladson, SC 29456</p>
+            <div class="contact-address">
+              <p>3481 Ladson Road</p>
+              <p>Ladson, SC 29456</p>
+            </div>
             <ul>
               <li>Call: <a href="#">843.900.0745</a></li>
               <li>Fax: <a href="#">866.396.4079</a></li>
