@@ -11,20 +11,23 @@
   <body>
 
     <div data-sticky-container>
-      <div class="top-bar" data-sticky data-options="marginTop:0;">
-        <div class="top-bar-left">
+      <div class="top-bar sticky" data-sticky data-options="marginTop:0;">
+        <div class="top-bar-left hide-for-large">
+          <a href="index.html" class="logo"><img src="images/logo-PrattPT-alt@2x.png" /></a>
+        </div>
+        <div class="top-bar-left show-for-large">
           <a href="index.html" class="logo"><img src="images/logo-PrattPT@2x.png" /></a>
         </div>
         <div class="title-bar" data-responsive-toggle="navigation" data-hide-for="medium">
+          <span class="nav-phone show-for-small">843.900.0745</span>
           <button class="menu-icon" type="button" data-toggle="navigation"></button>
-          <div class="title-bar-title">Menu</div>
         </div>
         <div class="top-bar-right" id="navigation">
           <ul class="menu vertical medium-horizontal" data-responsive-menu>
             <li><a href="services.html">Services</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><p>843.900.0745</p></li>
+            <li class="hide-for-small-only"><p>843.900.0745</p></li>
           </ul>
         </div>
       </div>
@@ -50,7 +53,7 @@
       <div class="grid-float">
         <a name="pratt"></a>
         <div class="image">
-          <img src="images/img-test.png"/>
+          <img src="images/img-pratt.jpg"/>
         </div>
         <div class="cell">
           <h4>M. Ashton Pratt, DPT</h4>
@@ -60,7 +63,7 @@
       <div class="grid-float">
         <a name="bernard"></a>
         <div class="image">
-          <img src="images/img-test.png"/>
+          <img src="images/img-bernard.jpg"/>
         </div>
         <div class="cell">
           <h4>Maureen Bernard, PTA</h4>
@@ -69,8 +72,8 @@
       </div>
       <div class="grid-float">
         <a name="cunningham"></a>
-        <div class="image">
-          <img src="images/img-test.png"/>
+        <div class="image float-left">
+          <img src="images/img-cunningham.jpg"/>
         </div>
         <div class="cell">
           <h4>Rachel Cunningham, ATC</h4>
@@ -78,8 +81,8 @@
         </div>
       </div>
       <div class="grid-float">
-        <div class="image">
-          <img src="images/img-test.png"/>
+        <div class="image float-left">
+          <img src="images/img-doan.jpg"/>
         </div>
         <div class="cell">
           <h4>Victoria Doan, Front Office Coordinator</h4>
@@ -87,8 +90,8 @@
         </div>
       </div>
       <div class="grid-float">
-        <div class="image">
-          <img src="images/img-test.png"/>
+        <div class="image float-left">
+          <img src="images/img-wimberly.jpg"/>
         </div>
         <div class="cell">
           <h4>Alli Wimberly, Physical Therapy Technician</h4>
@@ -96,8 +99,8 @@
         </div>
       </div>
       <div class="grid-float">
-        <div class="image">
-          <img src="images/img-test.png"/>
+        <div class="image float-left">
+          <img src="images/img-paradise.jpg"/>
         </div>
         <div class="cell">
           <h4>Samantha Paradise, Physical Therapy Technician</h4>
@@ -124,10 +127,19 @@
             <img src="images/logo-PrattPT-circle@2x.png" />
             <p class="copyright">2017 Pratt Physical Therapy</p>
           </div>
-          <div class="large-3 cell">
-            <ul class="vertical menu" data-accordion-menu data-responsive-menu="accordion medium-dropdown" data-submenu-toggle="true">
+          <div class="medium-4 large-3 cell">
+            <div class="show-for-medium">
+              <a href="services.html"><h4>Services</h4></a>
+              <ul class="menu vertical">
+                <li><a href="services.html#manualtherapy">Manual Therapy</a></li>
+                <li><a href="services.html#physicaltherapy">Physical Therapy</a></li>
+                <li><a href="services.html#wellnessprogram">Wellness Program</a></li>
+                <li><a href="services.html#walkinclinic">Walk-In Clinic</a></li>
+              </ul>
+            </div>
+            <ul class="vertical menu simple accordion-menu show-for-small-only" data-accordion-menu data-submenu-toggle="true">
               <li>
-                <a href="#"><h4>Services</h4></a>
+                <a href="services.html"><h4>Services</h4></a>
                 <ul class="menu vertical">
                   <li><a href="services.html#manualtherapy">Manual Therapy</a></li>
                   <li><a href="services.html#physicaltherapy">Physical Therapy</a></li>
@@ -137,10 +149,18 @@
               </li>
             </ul>
           </div>
-          <div class="large-3 cell">
-            <ul class="vertical menu" data-accordion-menu data-responsive-menu="accordion medium-dropdown" data-submenu-toggle="true">
+          <div class=" medium-4 large-3 cell">
+            <div class="show-for-medium">
+              <a href="about.html"><h4>About Us</h4></a>
+              <ul class="menu vertical">
+                <li><a href="about.html#pratt">Dr. M. Ashton Pratt</a></li>
+                <li><a href="about.html#bernard">Maureen Bernard, PTA</a></li>
+                <li><a href="about.html#cunningham">Rachel Cunningham, ATC</a></li>
+              </ul>
+            </div>
+            <ul class="vertical menu simple accordion-menu show-for-small-only" data-accordion-menu data-submenu-toggle="true">
               <li>
-                <a href="#"><h4>About Us</h4></a>
+                <a href="about.html"><h4>About Us</h4></a>
                 <ul class="menu vertical">
                   <li><a href="about.html#pratt">Dr. M. Ashton Pratt</a></li>
                   <li><a href="about.html#bernard">Maureen Bernard, PTA</a></li>
@@ -149,8 +169,8 @@
               </li>
             </ul>
           </div>
-          <div class="large-3 cell">
-            <h4>Contact</h4>
+          <div class="medium-4 large-3 cell">
+            <a href="contact.html"><h4>Contact</h4></a>
             <div class="contact-address">
               <p>3481 Ladson Road</p>
               <p>Ladson, SC 29456</p>

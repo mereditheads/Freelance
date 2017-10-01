@@ -24,15 +24,19 @@ h3{
 }
 
 p{
+	@include breakpoint(large){
+		font-size: 14px;
+	}
 	&.large{
 		font-size: 14px;
 		@include breakpoint(large) {
-			font-size: 18px;
+			font-size: 16px;
 		}
 		font-weight: 300;
 		color: $brand-color-primary;
 	}
 	&.accent{
+		margin-bottom: 0;
 		font-size: 16px;
 		@include breakpoint(large) {
 			font-size: 20px;
@@ -58,7 +62,7 @@ a{
 
 .bg-accent{
 	background-color: $brand-color-accent;
-	h2, h2, p, ul{
+	.title, p, ul{
 		color: #fff;
 	}
 }
@@ -102,32 +106,38 @@ a{
 }
 
 .grid-float{
+	&:before, 
+	&:after {
+	    display: table;
+	    content: ' ';
+	    -webkit-flex-basis: 0;
+	    -ms-flex-preferred-size: 0;
+	    flex-basis: 0;
+	    -webkit-box-ordinal-group: 2;
+	    -webkit-order: 1;
+	    -ms-flex-order: 1;
+	    order: 1;
+    }
+	&:after {
+    	clear: both;
+    }
 	+ .grid-float{
 		margin-top: $amount-small;
 		@include breakpoint(large){
-			-ms-flex-align: center;
-	    	align-items: center;
+			margin-top: $amount-medium;
 		}
 	}
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
 	.image{
 		float: left;
 		width: 30%;
+		margin-right: $amount-small;
 	}
 	.cell{
-		float: left;
-		width: 70%;
-		padding-left: $amount-small;
-		padding-right: $amount-small;
-		@include breakpoint(large){
-			padding-left: $amount-large;
-			padding-right: $amount-large;
+		@include breakpoint(medium){
+			padding-top: $amount-small;
 		}
 	}
-}
+} 
 
 @include breakpoint(medium){
 	.grid-image{
@@ -165,21 +175,41 @@ a{
 	}
 }
 
-.block-padding-medium {
-	padding: $amount-tiny;
+.top-bar{
+	width: 100%;
+	padding: 0;
+	@include breakpoint(medium){
+		padding: $amount-tiny;
+	}
 	@include breakpoint(large){
-		padding: $amount-medium;	
+		padding: $amount-small;
 	}
 }
 
 .title-bar{
 	max-width: 1200px;
-	padding: $amount-small $amount-small $amount-tiny $amount-small;
+	padding: $amount-tiny ;
 	background: $brand-color-primary;
 }
 
+.top-bar-left{
+	padding: $amount-tiny/2 0 $amount-tiny/2 $amount-small;
+	@include breakpoint(medium){
+		padding: 0;
+	}
+}
+
+.top-bar-right,
 .title-bar-right{
 	max-width: 440px;
+}
+
+#navigation ul{
+	padding: $amount-tiny/2 0;
+}
+
+.nav-phone{
+	padding-right: $amount-small;
 }
 
 .title-bar,
@@ -197,7 +227,10 @@ a{
 	}
 	p, 
 	.menu a{
-		padding: $amount-small/2 $amount-small;
+		padding: $amount-small*3/4 $amount-small;
+		@include breakpoint(medium){
+			padding: $amount-small/2 $amount-small;
+		}
 	}
 	.logo {
 	    display: inline-block;
@@ -211,14 +244,78 @@ a{
 	.active{
 		border-bottom: solid 3px $brand-color-accent;
 	}
+	.top-bar-left,
+	.title-bar-left{
+		@include breakpoint(small){
+			max-width: 40%;
+		}
+	}
+	ul{
+		background: $brand-color-secondary;
+		@include breakpoint(medium){
+			background: none;
+		}
+	}
+}
+
+.no-js {
+  @include breakpoint(small only) {
+    .top-bar {
+      display: none;
+    }
+  }
+
+  @include breakpoint(medium) {
+    .title-bar {
+      display: none;
+    }
+  }
 }
 
 .hero{
-	height: 500px;
+	position: relative;
 	text-align: center;
 	background: $brand-color-primary;
 	h1, h2, a{
 		color: #fff;
+	}
+	.title{
+		position: absolute;
+		bottom: $amount-small*1.5;
+		left: 0;
+		width: 100%;
+		@include breakpoint(large){
+			bottom: $amount-medium*1.5;
+		}
+	}
+	.image{
+		position: relative;
+		img:first-child{
+			position: absolute;
+			transition: ease-in-out 0.3s;
+		}
+	}
+	a:hover{
+		img:first-child{
+			opacity: 0;
+		}
+	}
+}
+
+.bg-hero{
+	min-height: 200px;
+	padding: 0;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: none;
+	&.bg-hero-physicaltherapy{
+		background-image: url('../images/img-physicaltherapyconditions.jpg');
+	}
+	&.bg-hero-manualtherapy{
+		background-image: url('../images/img-manualtherapymethods.jpg');
+	}
+	@include breakpoint(medium){
+		min-height: 400px;
 	}
 }
 
@@ -237,6 +334,15 @@ a{
 	}
 	h1{
 		color: #fff;
+	}
+}
+
+.breadcrumb{
+	padding-top: $amount-small;
+	padding-bottom: $amount-small;
+	@include breakpoint(medium){
+		padding-top: $amount-medium;
+		padding-bottom: $amount-medium;
 	}
 }
 
@@ -286,6 +392,34 @@ a{
 	}
 }
 
+.block-padding-medium {
+	padding: $amount-tiny $amount-tiny/2 $amount-tiny*1.5 $amount-tiny/2;
+	@include breakpoint(large){
+		padding: $amount-medium $amount-medium/2 $amount-medium*1.5 $amount-medium/2;	
+	}
+}
+
+.block-padding-small {
+	padding: $amount-tiny/2 $amount-tiny*1/4 $amount-tiny $amount-tiny*1/4;
+	@include breakpoint(large){
+		padding: $amount-small/2 $amount-small*1/4 $amount-small $amount-small*1/4;	
+	}
+}
+
+.block-card{
+	margin-top: $amount-small;
+	background: $brand-color-accent;
+	.content{
+		padding: $amount-tiny $amount-tiny $amount-tiny*1.5 $amount-tiny;
+		@include breakpoint(large){
+			padding: $amount-small $amount-small $amount-small*1.5 $amount-small;	
+		}
+		.title, p, ul{
+			color: #fff;
+		}
+	}
+}
+
 .block-accent{
 	position: relative;
 	padding: $amount-small;
@@ -321,34 +455,91 @@ a{
 }
 
 .block-labeled{
-	position: relative;
+	/*position: relative;*/
+	margin-bottom: $amount-tiny;
+	@include breakpoint(medium){
+		margin-bottom: 0;
+	}
 	.title{
 		/*position: absolute;
 		top: 0;
 		left: 0;*/
 		width: 100%;
 		margin: 0;
-		padding: $amount-tiny;
+		padding: $amount-tiny $amount-tiny/2;
 		background: $brand-color-accent;
 		color: #fff;
 		text-align: center;
+		@include breakpoint(medium){
+			padding-top: $amount-tiny/2;
+			padding-bottom: $amount-tiny/2;
+			font-size: 14px;
+		}
+		@include breakpoint(large){
+			padding-top: $amount-tiny;
+			padding-bottom: $amount-tiny;
+			font-size: 20px;
+		}
 	}
 }
 
+.block-overlay{
+	position: relative;
+	margin-top: $amount-tiny;
+	.title{
+		position: absolute;
+		top: 45%;
+		left: 0;
+		width: 100%;
+		color: #fff;
+		font-family: $brand-font-alternate;
+		font-weight: bold;
+		text-transform: capitalize;
+		text-shadow: 0px 1px 10px rgba($brand-color-secondary, 0.5);
+		text-align: center;
+		z-index: 100;
+	}
+	.image{
+		position: relative;
+		img:first-child{
+			position: absolute;
+			transition: ease-in-out 0.3s;
+		}
+	}
+	a:hover{
+		img:first-child{
+			opacity: 0;
+		}
+	}
+}
+
+
 .footer{
-	padding: $amount-medium $amount-small;
+	padding: $amount-small 0; 
+	@include breakpoint(medium){
+		padding: $amount-medium $amount-small;
+	}
 	background: $brand-color-secondary;
 	.cell{
 		padding-left: $amount-small;
 		padding-right: $amount-small;
+		&:last-child{
+			margin-top: $amount-tiny;
+			@include breakpoint(medium){
+				margin-top: 0;
+			}
+		}
 	}
 	.logo{
 		text-align: center;
 		img{
 			width: auto;
-			max-width: 140px;
+			max-width: 100px;
 			height: auto;
 			margin-bottom: $amount-small;
+			@include breakpoint(large){
+				max-width: 140px;
+			}
 		}
 	}
 	.copyright{
@@ -359,18 +550,31 @@ a{
 		text-transform: uppercase;
 	}
 	h2, h3, h4{
-		margin-bottom: $amount-small*3/4;
+		margin-bottom: $amount-small/2;
+	}
+	.accordion-menu{
+		h2, h3, h4{
+			margin-top: $amount-small/2;
+		}
+		.is-submenu-item{
+			margin-top: $amount-tiny;
+			margin-bottom: $amount-tiny;
+		}
 	}
 	ul{
 		list-style: none;
 		margin: 0
 	}
-	li{
-		margin-bottom: 10px;
+	.menu a {
+		padding-left: 0;
+		padding-right: 0;
 	}
 	a{
 		font-size: 14px;
 		letter-spacing: 0.5px;
+	}
+	.menu.simple li+li{
+		margin-left: 0;
 	}
 	.contact-address p:first-child{
 		margin-bottom: 0;
