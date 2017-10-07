@@ -96,20 +96,20 @@
         <div class="grid-x grid-padding-x">
           <div class="small-12 medium-6 cell">
             <h3>Schedule an Appointment</h3>
-            <form data-abide>
+            <form data-abide action="contact.php" method="post" enctype="text/plain">
               <div data-abide-error class="alert callout" style="display: none;">
-                <p><i class="fi-alert"></i> There are some errors in your form.</p>
+                <p><i class="fi-alert"></i>Please fill out all form fields.</p>
               </div>
-              <input type="text" placeholder="Name" required>
+              <input type="text" placeholder="First &amp; Last Name" id="name" name="contact_name" required>
               <!--<span class="form-error">
                 Required field!
               </span>-->
-              <input type="email" placeholder="Email Address">
-              <input type="tel" placeholder="Phone Number" required>
-              <input type="text" placeholder="Reason For Visit" required>
-              <textarea type="text" placeholder="Comments/Questions" rows="3"></textarea>
+              <input type="email" placeholder="Email Address" id="email" name="contact_email">
+              <input type="tel" placeholder="Phone Number" required id="phone" name="contact_phone">
+              <input type="text" placeholder="Reason For Visit" required id="visit" name="contact_visit">
+              <textarea type="text" placeholder="Comments/Questions" rows="3" id="message" name="contact_message"></textarea>
+              <button class="button" type="submit" value="Submit">Send</a>
             </form>
-            <button class="button" type="submit" value="Submit">Send</a>
           </div>
           <div class="small-12 medium-6 cell">
             <img src="images/img-exam.jpg"/>
