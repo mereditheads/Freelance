@@ -278,37 +278,49 @@ a{
   }
 }
 
-@include breakpoint(medium){
-	.nav-home {
-	    display: none;
-	    &.is-stuck{
-	    	display: inline-flex;
-	    }
-	}
+.nav-home {
+    display: none;
+    &.is-stuck{
+    	display: inline-flex;
+    }
 }
 
-@include breakpoint(medium){
-	.nav-hero{
-		position: absolute;
-		top: 0;
-		z-index: 100;
-		width: 100%;
-		.top-bar{
-			align-items: normal;
-			background: url('../images/bg-overlay.png') repeat-x cover; /* For browsers that do not support gradients */
-		    background: -webkit-linear-gradient(#011945, rgba(#000, 0.0)); /* For Safari 5.1 to 6.0 */
-		    background: -o-linear-gradient(#011945, rgba(#000, 0.0)); /* For Opera 11.1 to 12.0 */
-		    background: -moz-linear-gradient(#011945, rgba(#000, 0.0)); /* For Firefox 3.6 to 15 */
-		    background: linear-gradient(#011945, rgba(#000, 0.0)); /* Standard syntax */
-			.logo{
-				height: 100%;
-				img{
-					max-height: 100px;
-				}
+.nav-hero{
+	position: absolute;
+	top: 0;
+	z-index: 100;
+	width: 100%;
+	.top-bar,
+	.title-bar{
+		align-items: normal;	
+	}
+	.top-bar{
+		height: 150px;
+		@include breakpoint(medium){
+			height: auto;
+		}
+		background: url('../images/bg-overlay.png') repeat-x cover; /* For browsers that do not support gradients */
+	    background: -webkit-linear-gradient(#011945, rgba(#000, 0.0)); /* For Safari 5.1 to 6.0 */
+	    background: -o-linear-gradient(#011945, rgba(#000, 0.0)); /* For Opera 11.1 to 12.0 */
+	    background: -moz-linear-gradient(#011945, rgba(#000, 0.0)); /* For Firefox 3.6 to 15 */
+	    background: linear-gradient(#011945, rgba(#000, 0.0)); /* Standard syntax */
+		.logo{
+			height: 100%;
+			img{
+				max-height: 100px;
 			}
 		}
 	}
+	.title-bar{
+	    height: 59px;
+    	padding-top: 20px;
+		background: none;
+	}
+	.top-bar-left img{
+		height: 100px;
+	}
 }
+
 @include breakpoint(large){
 	.nav-hero {
 		.top-bar {
@@ -370,6 +382,33 @@ a{
 	@include breakpoint(medium){
 		min-height: 400px;
 	}
+}
+
+.orbit-caption{
+	padding-top: 30px;
+    padding-bottom: 60px;
+    background: none;
+    background: -webkit-linear-gradient(rgba(#000, 0.0), rgba(#011945, 0.6)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(#000, 0.0), rgba(#011945, 0.6)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(#000, 0.0), rgba(#011945, 0.6)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(#000, 0.0), rgba(#011945, 0.6)); /* Standard syntax */
+	font-family: $brand-font-alternate;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.orbit-bullets{
+	position: absolute;
+    bottom: 10px;
+    width: 100%;
+    button{
+    	background-color: #fff;
+    	&.is-active{
+    		background-color: $brand-color-primary;
+    	}
+    }
 }
 
 .page-title{
