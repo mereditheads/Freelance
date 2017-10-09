@@ -96,19 +96,13 @@
         <div class="grid-x grid-padding-x">
           <div class="small-12 medium-6 cell">
             <h3>Schedule an Appointment</h3>
-            <form data-abide action="http://formspree.io/eads.meredith@gmail.com" method="POST">
-              <div data-abide-error class="alert callout" style="display: none;">
-                <p><i class="fi-alert"></i>Please fill out all form fields.</p>
-              </div>
-              <input type="text" placeholder="First &amp; Last Name" id="name" name="contact_name" required>
-              <!--<span class="form-error">
-                Required field!
-              </span>-->
+            <form action="http://formspree.io/eads.meredith@gmail.com" method="POST">
+              <input type="text" placeholder="First &amp; Last Name" id="name" name="contact_name">
               <input type="email" placeholder="Email Address" id="email" name="contact_email">
-              <input type="tel" placeholder="Phone Number" required id="phone" name="contact_phone">
-              <input type="text" placeholder="Reason For Visit" required id="visit" name="contact_visit">
+              <input type="tel" placeholder="Phone Number" id="phone" name="contact_phone">
+              <input type="text" placeholder="Reason For Visit" id="visit" name="contact_visit">
               <textarea type="text" placeholder="Comments/Questions" rows="3" id="message" name="contact_message"></textarea>
-              <button type="submit">Send</button>
+              <button class="button" type="submit">Send</button>
             </form>
           </div>
           <div class="small-12 medium-6 cell">
@@ -194,40 +188,6 @@
     <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
     <script src="bower_components/foundation-sites/dist/js/plugins/foundation.abide.js"></script>
     <script src="js/app.js"></script>
-
-    <script type="text/javascript">
-      $(document)
-        // field element is invalid
-        .on("invalid.zf.abide", function(ev,elem) {
-          console.log("Field id "+ev.target.id+" is invalid");
-        })
-        // field element is valid
-        .on("valid.zf.abide", function(ev,elem) {
-          console.log("Field name "+elem.attr('name')+" is valid");
-        })
-        // form validation failed
-        .on("forminvalid.zf.abide", function(ev,frm) {
-          console.log("Form id "+ev.target.id+" is invalid");
-        })
-        // form validation passed, form will submit if submit event not returned false
-        .on("formvalid.zf.abide", function(ev,frm) {
-          console.log("Form id "+frm.attr('id')+" is valid");
-          // ajax post form 
-        })
-        // to prevent form from submitting upon successful validation
-        .on("submit", function(ev) {
-          ev.preventDefault();
-          console.log("Submit for form id "+ev.target.id+" intercepted");
-        });
-      // You can bind field or form event selectively
-      $("#foo").on("invalid.zf.abide", function(ev,el) {
-        alert("Input field foo is invalid");
-      });
-      $("#bar").on("formvalid.zf.abide", function(ev,frm) {
-        alert("Form is valid, finally!");
-        // do something perhaps
-      });
-    </script>
 
   </body>
 </html>

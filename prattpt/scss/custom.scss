@@ -35,6 +35,12 @@ p{
 		font-weight: 300;
 		color: $brand-color-primary;
 	}
+	&.small {
+	    font-size: 10px;
+	    @include breakpoint(large) {
+	    	font-size: 12px;
+	    }
+	}
 	&.accent{
 		margin-bottom: 0;
 		font-size: 16px;
@@ -272,6 +278,53 @@ a{
   }
 }
 
+@include breakpoint(medium){
+	.nav-home {
+	    display: none;
+	    &.is-stuck{
+	    	display: inline-flex;
+	    }
+	}
+}
+
+@include breakpoint(medium){
+	.nav-hero{
+		position: absolute;
+		top: 0;
+		z-index: 100;
+		width: 100%;
+		.top-bar{
+			align-items: normal;
+			background: url('../images/bg-overlay.png') repeat-x cover; /* For browsers that do not support gradients */
+		    background: -webkit-linear-gradient(#011945, rgba(#000, 0.0)); /* For Safari 5.1 to 6.0 */
+		    background: -o-linear-gradient(#011945, rgba(#000, 0.0)); /* For Opera 11.1 to 12.0 */
+		    background: -moz-linear-gradient(#011945, rgba(#000, 0.0)); /* For Firefox 3.6 to 15 */
+		    background: linear-gradient(#011945, rgba(#000, 0.0)); /* Standard syntax */
+			.logo{
+				height: 100%;
+				img{
+					max-height: 100px;
+				}
+			}
+		}
+	}
+}
+@include breakpoint(large){
+	.nav-hero {
+		.top-bar {
+			.logo {
+				padding-left: $amount-medium;
+				img{
+					max-height: 160px;
+				}
+			}
+		}
+		.top-bar-right ul{
+			padding-top: 9px;
+		}
+	}
+}
+
 .hero{
 	position: relative;
 	text-align: center;
@@ -343,6 +396,14 @@ a{
 	@include breakpoint(medium){
 		padding-top: $amount-medium;
 		padding-bottom: $amount-medium;
+	}
+}
+
+.service-details{
+	@include breakpoint(medium){
+		img{
+			max-width: 440px;
+		}
 	}
 }
 
