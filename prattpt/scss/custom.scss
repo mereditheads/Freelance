@@ -12,15 +12,34 @@ h1, h2, h3, h4{
 }
 
 h1{
+	font-size: 30px; /*sized down for tablet*/
 	letter-spacing: 4px;
+	@include breakpoint(large){
+		font-size: 42px; /*back to size set in _settings*/
+	}
 }
 
 h2{
+	font-size: 26px; /*sized down for tablet*/
 	letter-spacing: 3px;
+	@include breakpoint(large){
+		font-size: 34px; /*back to size set in _settings*/
+	}
 }
 
 h3{
+	font-size: 22px; /*sized down for tablet*/
 	letter-spacing: 2px;
+	@include breakpoint(large){
+		font-size: 28px; /*back to size set in _settings*/
+	}
+}
+
+h4{
+	font-size: 18px; /*sized down for tablet*/
+	@include breakpoint(large){
+		font-size: 22px; /*back to size set in _settings*/
+	}
 }
 
 p{
@@ -85,7 +104,7 @@ a{
 	&:before{
 		content: " ";
 		position: absolute;
-		z-index: -1;
+		z-index: 1;
 		top: -5px;
 		left: -5px;
 		right: -5px;
@@ -98,6 +117,18 @@ a{
 		font-size: 16px;
 		letter-spacing: 3px;
 	}
+}
+
+.anchor{
+	height: 1px;
+	width: 100%;
+	@include breakpoint(medium){
+		width: 0;
+	}
+}
+
+[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea{
+	box-shadow: none;
 }
 
 .grid-padding-large>.cell{
@@ -307,14 +338,23 @@ a{
 		.logo{
 			height: 100%;
 			img{
-				max-height: 100px;
+				max-height: 80px;
+				margin-top: 10px;
 			}
 		}
 	}
 	.title-bar{
 	    height: 59px;
-    	padding-top: 20px;
+    	padding-top: 25px;
 		background: none;
+	}
+	.hero-title{
+	    position: absolute;
+		right: 15px;
+	    top: 50px;
+	    font-size: 14px;
+	    letter-spacing: 2px;
+	    color: #fff;
 	}
 	.top-bar-left img{
 		height: 100px;
@@ -346,11 +386,11 @@ a{
 	}
 	.title{
 		position: absolute;
-		bottom: $amount-small*1.5;
+		bottom: 30%;
 		left: 0;
 		width: 100%;
 		@include breakpoint(large){
-			bottom: $amount-medium*1.5;
+			bottom: 40%;
 		}
 	}
 	.image{
@@ -393,9 +433,8 @@ a{
     background: -moz-linear-gradient(rgba(#000, 0.0), rgba(#011945, 0.6)); /* For Firefox 3.6 to 15 */
     background: linear-gradient(rgba(#000, 0.0), rgba(#011945, 0.6)); /* Standard syntax */
 	font-family: $brand-font-alternate;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
-	letter-spacing: 1px;
 	text-align: center;
 }
 
@@ -404,6 +443,9 @@ a{
     bottom: 10px;
     width: 100%;
     button{
+    	margin-left: $amount-tiny/2;
+    	margin-right: $amount-tiny/2;
+    	border: solid 2px #fff;
     	background-color: #fff;
     	&.is-active{
     		background-color: $brand-color-primary;
@@ -679,6 +721,9 @@ a{
 	.contact-address p:first-child{
 		margin-bottom: 0;
 	}
+	.contact li{
+		margin-bottom: $amount-tiny;
+	}
 }
 
 .sub-footer{
@@ -689,6 +734,10 @@ a{
 		color: #fff;
 	}
 	span:last-child{
-		margin-left: $amount-tiny;
+		display: block;
+		@include breakpoint(medium){
+			display: inline-block;
+			margin-left: $amount-tiny;
+		}
 	}
 }
